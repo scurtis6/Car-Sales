@@ -1,9 +1,18 @@
+// Set up "empty" reducer and initial state 👉 Set up store and Provider 👉
+// Connect components 👉 Add events and event handlers in UI 👉 Build action creators 👉
+// write the reducer logic for the actions 👉 Rinse and repeat
+
 import React from 'react';
 
 import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
+
+import { createStore } from "redux";
+
+export const store = createStore();
+console.log(store.getState());
 
 const App = () => {
   const state = {
