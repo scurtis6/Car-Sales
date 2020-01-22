@@ -8,10 +8,11 @@ import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
+import { addedReducer } from './reducers/addedReducer';
 
 import { createStore } from "redux";
 
-export const store = createStore();
+export const store = createStore(addedReducer);
 console.log(store.getState());
 
 const App = () => {
