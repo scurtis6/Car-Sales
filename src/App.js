@@ -10,7 +10,7 @@ import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 import { carReducer } from './reducers/carReducer';
-import { addFeature, removeFeature } from './actions/carActions';
+import { addFeature, removeFeature, updateTotal } from './actions/carActions';
 
 import { createStore } from "redux";
 
@@ -18,15 +18,19 @@ export const store = createStore(carReducer);
 console.log(store.getState());
 
 const App = (props) => {
+  console.log(props)
 
   const removeFeature = item => {
     // dispatch an action here to remove an item
     props.removeFeature(item)
+    props.updateTotal(-item.price)
   };
 
   const buyItem = item => {
     // dipsatch an action here to add an item
     props.addFeature(item);
+    props.updateTotal(item.price)
+
   };
 
   return (
@@ -57,6 +61,6 @@ function mapStateToProps (state) {
   }
 }
 
-export default connect(mapStateToProps, { addFeature, removeFeature })(App)
+export default connect(mapStateToProps, { addFeature, removeFeature, updateTotal })(App)
 
 // export default App;
