@@ -12,9 +12,16 @@ export const addFeature = feature => {
         type: 'ADD_FEATURE',
         payload: feature
     }
-}
+};
 export const removeFeature = feature => {
     return { 
         type: 'REMOVE_FEATURE', 
-        payload: feature };
-}
+        payload: feature 
+    }
+};
+export const updateTotal = total => {
+    return {
+        type: 'UPDATE-TOTAL',
+        payload: total
+    }
+};
